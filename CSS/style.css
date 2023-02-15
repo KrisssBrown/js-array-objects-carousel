@@ -1,0 +1,37 @@
+.slide img {
+	width: 100%;
+	aspect-ratio: 16/9;
+	object-fit: cover;
+	object-position: center;
+}
+
+.slide.active {
+	display: block;
+}
+
+.slide {
+	display: none;
+}
+
+.carousel{
+    position: relative;
+}
+
+.arrow{
+    font-size: 48px;
+    color: white;
+}
+
+.carousel-left-arrow{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-right-arrow{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
