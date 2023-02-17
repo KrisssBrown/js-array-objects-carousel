@@ -1,35 +1,65 @@
-// let images = [
-// 	'./IMG/1065466.png',
-// 	'./IMG/1124739.jpg',
-// 	'./IMG/885371.jpg',
-// 	'./IMG/885991.jpg',
-// 	'./IMG/ellie-the-last-of-us-part-2-uhdpaper.com-hd-5.2478.jpg',
-//     './IMG/the_last_of_us_ps3_game-wide.jpg',
-// ]
+let images = [
+	'./IMG/1065466.png',
+	'./IMG/1124739.jpg',
+	'./IMG/885371.jpg',
+	'./IMG/885991.jpg',
+	'./IMG/ellie-the-last-of-us-part-2-uhdpaper.com-hd-5.2478.jpg',
+    './IMG/the_last_of_us_ps3_game-wide.jpg',
+]
+
+const slides = [
+	{
+		image: './IMG/1065466.png',
+		titolo: 'The Last Of Us',
+		descrizione: 'Zombie ovunque. Briganti pronti ad ucciderti ad ogni angolo. Poco cibo. Poche munizioni. Una storia di speranza e di vendetta. Che dire!! La vacanza che ognuno vorrebbe :D'
+	},{
+		image: './IMG/1124739.jpg',
+		titolo: 'The Last Of Us',
+		descrizione: 'Zombie ovunque. Briganti pronti ad ucciderti ad ogni angolo. Poco cibo. Poche munizioni. Una storia di speranza e di vendetta. Che dire!! La vacanza che ognuno vorrebbe :D'
+	},{
+		image:	'./IMG/885371.jpg',
+		titolo: 'The Last Of Us',
+		descrizione: 'Zombie ovunque. Briganti pronti ad ucciderti ad ogni angolo. Poco cibo. Poche munizioni. Una storia di speranza e di vendetta. Che dire!! La vacanza che ognuno vorrebbe :D'
+	},{
+		image: './IMG/885991.jpg',
+		titolo: 'The Last Of Us',
+		descrizione: 'Zombie ovunque. Briganti pronti ad ucciderti ad ogni angolo. Poco cibo. Poche munizioni. Una storia di speranza e di vendetta. Che dire!! La vacanza che ognuno vorrebbe :D'
+	},{
+		image: './IMG/ellie-the-last-of-us-part-2-uhdpaper.com-hd-5.2478.jpg',
+		titolo: 'The Last Of Us',
+		descrizione: 'Zombie ovunque. Briganti pronti ad ucciderti ad ogni angolo. Poco cibo. Poche munizioni. Una storia di speranza e di vendetta. Che dire!! La vacanza che ognuno vorrebbe :D'
+	},{
+		image: './IMG/the_last_of_us_ps3_game-wide.jpg',
+		titolo: 'The Last Of Us',
+		descrizione: 'Zombie ovunque. Briganti pronti ad ucciderti ad ogni angolo. Poco cibo. Poche munizioni. Una storia di speranza e di vendetta. Che dire!! La vacanza che ognuno vorrebbe :D'
+	},
+]
 
 let currentIndex = 0
 
-// // RECUPERIAMO DAL DOM IL carousel DOVE INSERIRE LE SLIDES
-// const carousel = document.querySelector('.carousel')
-// console.log(carousel)
+// RECUPERIAMO DAL DOM IL carousel DOVE INSERIRE LE SLIDES
+const carousel = document.querySelector('.carousel')
+console.log(carousel)
 
-// for (let i = 0; i < images.length; i++) {
-// 	const srcImage = images[i]
-// 	console.log(srcImage)
+slides.forEach(({ image, titolo, descrizione }, index) => {
+	let className = 'slide'
+	if (index === currentIndex) {
+		className += ' active'
+	}
+	// console.log(index, slide)
 
-// 	let className = 'slide'
-// 	if (i === currentIndex) {
-// 		className += ' active'
-// 	}
+	const htmlSlide = `
+    <div class="${className}">
+      <img src="${image}" alt="" />
+      <div class="slide__des">
+        <h3>${titolo}</h3>
+        <p>${descrizione}</p>
+      </div>
+    </div>
+  `
 
-// 	const htmlSlide = `
-//     <div class="${className}">
-//       <img src="${srcImage}" alt="">
-//     </div>
-//   `
-
-// 	carousel.innerHTML += htmlSlide
-// }
+	carousel.innerHTML += htmlSlide
+})
 
 // RECUPERATO LE SLIDE DEL carousel
 let slideElements = document.querySelectorAll('.carousel .slide')
@@ -89,45 +119,6 @@ arrowRightElement.addEventListener('click', function () {
 
 	// }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
